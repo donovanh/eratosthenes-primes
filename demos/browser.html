@@ -16,6 +16,12 @@
     .result {
       margin: 10px;
     }
+    .show {
+      display: block
+    }
+    .hide {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -24,26 +30,37 @@
     <input type="number" id="finish" value="100" />
     <input type="submit" value="Calculate">
   </form>
+  <div id="calculating" class="hide">Calculating...</div>
+  <div id="timeDiv"></div>
   <div id="output"></div>
   <script>
     const calculateForm = document.getElementById('calculateForm')
+    const calculating = document.getElementById('calculating')
     const output = document.getElementById('output')
+    const timeDiv = document.getElementById('timeDiv')
     calculateForm.onsubmit = calculatePrimes
 
     function calculatePrimes(e) {
       e.preventDefault()
-      output.innerHTML = 'Calculating...'
-      const start = document.getElementById('start')
-      const finish = document.getElementById('finish')
-      const results = primes.generate(start.value, finish.value)
-      if (Array.isArray(results)) {
-        renderResult(results)
-      } else {
-        renderMessage(results)
-      }
+      calculating.className = 'show'
+      output.innerHTML = ''
+      timeDiv.innerHTML = ''
+      setTimeout(() => {
+        const start = document.getElementById('start')
+        const finish = document.getElementById('finish')
+        const startTime = performance.now()
+        const results = primes.generate(start.value, finish.value)
+        endTime = performance.now()
+        calculating.className = 'hide'
+        if (Array.isArray(results)) {
+          renderResult(results, endTime - startTime)
+        } else {
+          renderMessage(results)
+        }
+      }, 10)
     }
 
-    function renderResult(results) {
+    function renderResult(results, time) {
       if (!results.length) {
         output.innerHTML = 'No primes found!'
         return
@@ -55,6 +72,7 @@
         resultDiv.innerHTML = result
         resultsDiv.appendChild(resultDiv)
       }
+      timeDiv.innerHTML = `<p>Time taken: ${(time).toFixed(1)} milliseconds</p>`
       output.innerHTML = resultsDiv.innerHTML
     }
 

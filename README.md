@@ -2,6 +2,8 @@
 
 A simple function that generates prime numbers between a given range. 
 
+It is based on the algorithm developed by Eratosthenes of Cyrene, known as the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).
+
 ## Usage
 
 In a web application, import and use the function like so:
@@ -33,7 +35,9 @@ In the browser:
 
 ## Performance considerations
 
-This is just a simple demo project and generating large prime numbers is not well suited to this JavaScript implementation. In general though, calculating primes within 1 and 200,000 should perform reasonably well. It gets exponentially slower for higher numbers.
+This is a fun demo and should be fast enough for most usage, except perhaps exploring very large prime numbers.
+
+While this is based on a fast algorithm, it gets noticeably slower beyond about 500,000 and gets exponentially slower for higher numbers.
 
 ## MIT License
 

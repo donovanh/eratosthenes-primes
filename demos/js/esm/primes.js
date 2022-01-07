@@ -1,4 +1,6 @@
 export var generate = function (start, finish) {
+    // Based on Sieve of Eratosthenes
+    // https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
     if (start < 1) {
         return 'Start number should be 1 or greater';
     }
@@ -6,25 +8,21 @@ export var generate = function (start, finish) {
         return 'Finish number should be greater than start';
     }
     var primes = [];
+    for (var i = 2; i < finish + 1; ++i) {
+        primes[i] = true;
+    }
+    for (var i = 2; i * i <= finish; ++i) {
+        if (primes[i]) {
+            for (var j = i * i; j <= finish; j += i) {
+                primes[j] = false;
+            }
+        }
+    }
     var results = [];
-    var currentNumber = 2;
-    for (var i = 2; i <= finish; i++) {
-        var skipThisNumber = false;
-        // tslint:disable-next-line
-        for (var j = 0; j < primes.length; j++) {
-            if (!(currentNumber % primes[j])) {
-                // Not a prime number
-                skipThisNumber = true;
-                continue;
-            }
+    for (var i = start; i < finish; ++i) {
+        if (primes[i]) {
+            results.push(i);
         }
-        if (!skipThisNumber) {
-            primes.push(currentNumber);
-            if (currentNumber > start) {
-                results.push(currentNumber);
-            }
-        }
-        currentNumber++;
     }
     return results;
 };
