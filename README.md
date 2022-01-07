@@ -25,7 +25,7 @@ primes.generate(1, 100)
 In the browser:
 
 ```html
-<script src="[CDN URL]"></script>
+<script src="http://hop.ie/eratosthenes-primes/js/browser/primes.js"></script>
 
 <script>
   const result = primes.generate(1, 100)
