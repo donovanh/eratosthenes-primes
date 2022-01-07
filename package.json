@@ -22,11 +22,11 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:module && npm run build:node && npm run build:browser && npm run build:manual",
+    "build": "npm run build:module && npm run build:node && npm run build:browser && npm run build:demos",
     "build:module": "tsc --project ./tsconfig.module.json",
     "build:node": "tsc --project ./tsconfig.node.json",
     "build:browser": "rollup -c",
-    "build:manual": "cp -R ./dist ./manual-tests/js",
+    "build:demos": "cp -R ./dist ./demos/js",
     "test": "jest",
     "watch": "npm test -- --watch",
     "format": "prettier --write \"src/**/*.ts\"",
