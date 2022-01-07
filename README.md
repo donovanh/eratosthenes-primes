@@ -15,7 +15,7 @@ generate(1, 100) // Returns array of primes between 1 and 100
 In Node / server-side JS:
 
 ```js
-const primes = require('./js/cjs')
+const primes = require('prime-generator')
 
 primes.generate(1, 100)
 ```
@@ -23,7 +23,7 @@ primes.generate(1, 100)
 In the browser:
 
 ```html
-<script src="./js/browser/primes.js"></script>
+<script src="[CDN URL]"></script>
 
 <script>
   const result = primes.generate(1, 100)
