@@ -2,7 +2,7 @@
 
 A simple function that generates prime numbers between a given range. 
 
-It is based on the algorithm developed by Eratosthenes of Cyrene, known as the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).
+It is based on the approach by Eratosthenes of Cyrene, known as the [Sieve of Eratosthenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).
 
 ## Usage
 
@@ -35,9 +35,9 @@ In the browser:
 
 ## Performance considerations
 
-This is a fun demo and should be fast enough for most usage, except perhaps exploring very large prime numbers.
+This is a fun demo and there are many [faster approaches](https://observablehq.com/@mourner/fast-prime-generator).
 
-While this is based on a fast algorithm, it gets noticeably slower beyond about 500,000 and gets exponentially slower for higher numbers.
+While this is pretty fast for light use, it gets noticeably slower beyond a target of 500,000 and gets exponentially slower for higher numbers.
 
 ## MIT License
 
