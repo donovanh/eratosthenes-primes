@@ -10,6 +10,7 @@ export var generate = function (start, finish) {
     var currentNumber = 2;
     for (var i = 2; i <= finish; i++) {
         var skipThisNumber = false;
+        // tslint:disable-next-line
         for (var j = 0; j < primes.length; j++) {
             if (!(currentNumber % primes[j])) {
                 // Not a prime number

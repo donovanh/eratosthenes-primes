@@ -13,6 +13,7 @@ const generate = (start, finish) => {
     let currentNumber = 2;
     for (let i = 2; i <= finish; i++) {
         let skipThisNumber = false;
+        // tslint:disable-next-line
         for (let j = 0; j < primes.length; j++) {
             if (!(currentNumber % primes[j])) {
                 // Not a prime number

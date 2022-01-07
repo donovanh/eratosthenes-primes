@@ -26,11 +26,11 @@
     "build:module": "tsc --project ./tsconfig.module.json",
     "build:node": "tsc --project ./tsconfig.node.json",
     "build:browser": "rollup -c",
-    "build:demos": "cp -R ./dist ./demos/js",
+    "build:demos": "cp -R ./dist/ ./demos/js",
     "test": "jest",
     "watch": "npm test -- --watch",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.node.json && tslint -p tsconfig.browser.json",
+    "lint": "tslint -p tsconfig.node.json && tslint -p tsconfig.module.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
@@ -43,10 +43,11 @@
     "babel-jest": "^27.4.6",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
+    "rollup": "^2.63.0",
+    "rollup-plugin-uglify": "^6.0.4",
     "ts-jest": "^27.1.2",
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.5.4",
-    "rollup": "^2.63.0"
+    "typescript": "^4.5.4"
   }
 }
