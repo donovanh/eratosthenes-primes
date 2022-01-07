@@ -1,4 +1,4 @@
-# Prime Generator
+# Prime Numbers Generator
 
 A simple function that generates prime numbers between a given range. 
 
@@ -9,7 +9,7 @@ It is based on the approach by Eratosthenes of Cyrene, known as the [Sieve of Er
 In a web application, import and use the function like so:
 
 ```js
-import { generate } from './primes'
+import { generate } from 'prime-generator'
 
 generate(1, 100) // Returns array of primes between 1 and 100
 ```

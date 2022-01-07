@@ -1,11 +1,11 @@
 {
-  "name": "prime-generator",
+  "name": "eratosthenes-primes",
   "version": "0.0.1",
   "description": "A simple prime number generator.",
   "author": "Donovan Hutchinson",
   "repository": {
     "type": "git",
-    "url": "https://github.com/donovanh/prime-generator"
+    "url": "https://github.com/donovanh/eratosthenes-primes"
   },
   "keywords": [
     "prime numbers",
@@ -36,12 +36,14 @@
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
     "version": "npm run format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "web": "gh-pages -d demos"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.7",
     "@types/jest": "^27.4.0",
     "babel-jest": "^27.4.6",
+    "gh-pages": "^3.2.3",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
     "rollup": "^2.63.0",
