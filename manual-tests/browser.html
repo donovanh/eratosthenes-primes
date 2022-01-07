@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser Example of Primes</title>
+  <script src="./js/browser/primes.js"></script>
+  <style>
+    #output {
+      display: flex;
+      max-width: 500px;
+      flex-wrap: wrap;
+      margin: 10px 0;
+    }
+    .result {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <form id="calculateForm">
+    <input type="number" id="start" value="1" />
+    <input type="number" id="finish" value="100" />
+    <input type="submit" value="Calculate">
+  </form>
+  <div id="output"></div>
+  <script>
+    const calculateForm = document.getElementById('calculateForm')
+    const output = document.getElementById('output')
+    calculateForm.onsubmit = calculatePrimes
+
+    function calculatePrimes(e) {
+      e.preventDefault()
+      output.innerHTML = 'Calculating...'
+      const start = document.getElementById('start')
+      const finish = document.getElementById('finish')
+      const results = primes.generate(start.value, finish.value)
+      if (Array.isArray(results)) {
+        renderResult(results)
+      } else {
+        renderMessage(results)
+      }
+    }
+
+    function renderResult(results) {
+      if (!results.length) {
+        output.innerHTML = 'No primes found!'
+        return
+      }
+      const resultsDiv = document.createElement('div')
+      for (const result of results) {
+        const resultDiv = document.createElement('div')
+        resultDiv.className = 'result'
+        resultDiv.innerHTML = result
+        resultsDiv.appendChild(resultDiv)
+      }
+      output.innerHTML = resultsDiv.innerHTML
+    }
+
+    function renderMessage(message) {
+      output.innerHTML = message
+    }
+  </script>
+</body>
+</html>

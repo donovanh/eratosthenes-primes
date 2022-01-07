@@ -1,0 +1,6 @@
+# Prime Generator
+
+
+## MIT License
+
+
