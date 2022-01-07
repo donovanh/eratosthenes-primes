@@ -23,7 +23,7 @@ export const generate = (start: number, finish: number): number[] | string => {
   }
 
   const results: number[] = []
-  for (let i = start; i < finish; ++i) { 
+  for (let i = start; i < finish; ++i) {
     if (primes[i]) {
       results.push(i)
     }
