@@ -9,7 +9,7 @@ It is based on the approach by Eratosthenes of Cyrene, known as the [Sieve of Er
 In a web application, import and use the function like so:
 
 ```js
-import { generate } from 'prime-generator'
+import { generate } from 'eratosthenes-primes'
 
 generate(1, 100) // Returns array of primes between 1 and 100
 ```
@@ -17,7 +17,7 @@ generate(1, 100) // Returns array of primes between 1 and 100
 In Node / server-side JS:
 
 ```js
-const primes = require('prime-generator')
+const primes = require('eratosthenes-primes')
 
 primes.generate(1, 100)
 ```
